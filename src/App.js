@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
-import {
-  FormControl,
-  Input,
-  InputAdornment,
-  IconButton,
-  InputLabel
-} from '@material-ui/core';
+import { FormControl, Input, InputAdornment, IconButton, InputLabel } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Send from '@material-ui/icons/Send';
 
@@ -44,7 +38,9 @@ const App = () => {
           type="text"
           value={input}
           onChange={handleChange}
-          data-testid="nameInput"
+          inputProps={{
+            'data-testid': 'nameInput'
+          }}
           endAdornment={
             <InputAdornment position="end">
               <IconButton
@@ -57,6 +53,7 @@ const App = () => {
             </InputAdornment>
           }
         />
+        
       </FormControl>
       <p data-testid="output">{output}</p>
     </div>
